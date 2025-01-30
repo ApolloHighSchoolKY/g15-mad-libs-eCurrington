@@ -7,7 +7,7 @@ public class RandomStuff {
     public static void main (String[] args)
     {
     	//Math.random version
-    	int x = (int)(Math.random()*50 + 1);
+    	int x = (int)(Math.random()*50 +1);
 
     	System.out.println(x);
 
@@ -17,6 +17,11 @@ public class RandomStuff {
 
     	System.out.println(y);
 
+		System.out.println((int)(Math.random()*12 - 3));
+		
+		Random rand2 = new Random();
+    	int y2 = rand.nextInt(15) + 13;
+		System.out.println(y2);
     }
 
 
