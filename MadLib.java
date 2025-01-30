@@ -23,11 +23,7 @@ public class MadLib
 		verbs.add("punched");
 		nouns.add("Ninja");
 		adjectives.add("massive");
-		story="Ninja punched the massive old lady.";
-
-
-		
-
+		story="Ninja punched the massive low taper fade.";
 	}
 
 	public MadLib(String fileName)
@@ -39,24 +35,42 @@ public class MadLib
 
 		try
 		{
-			String StoryString = new String();
+			
 			//Read the different parts of the story and concatenate the resulting
 			//story using the symbols to tell you the parts of speech
-			Scanner reader = new Scanner(new File("story.dat"));
+
+			Scanner copy = new Scanner(new File("story.dat"));
+			while(copy.hasNext())
+			{
+				story+=copy.next();
+			}
+
+
+			Scanner reader = new Scanner(story);
+			String words = "";
+			String returnString = "";
 			while(reader.hasNext())
 			{
-				if(reader.next().equals("#")){
-					storyString+= nouns
+				words=reader.next();
+				if(words.equals("#"))
+				{
+					returnString+=getRandomNoun();
 				}
-				if(reader.next().equals("#")){
-					storyString+= verbs
+				else if(words.equals("@"))
+				{
+					returnString+=getRandomVerb();
 				}
-				if(reader.next().equals("#")){
-					storyString+= adjectives
+				else if(words.equals("&"))
+				{
+					returnString+=getRandomAdjective();
 				}
-
-				reader.next();
+				else
+				{
+					returnString+=words;
+				}
 			}
+
+			System.out.println(returnString);
 			//While there is more of the story, read in the word/symbol
 
 				//If what was read in is one of the symbols, find a random
