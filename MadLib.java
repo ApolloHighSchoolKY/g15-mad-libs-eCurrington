@@ -56,19 +56,19 @@ public class MadLib
 				words=reader.next();
 				if(words.equals("#"))
 				{
-					returnString+=getRandomNoun();
+					returnString+=getRandomNoun()+" ";
 				}
 				else if(words.equals("@"))
 				{
-					returnString+=getRandomVerb();
+					returnString+=getRandomVerb()+ " ";
 				}
 				else if(words.equals("&"))
 				{
-					returnString+=getRandomAdjective();
+					returnString+=getRandomAdjective()+ " ";
 				}
 				else
 				{
-					returnString+=words;
+					returnString+=words+ " ";
 				}
 			}
 
